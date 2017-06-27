@@ -12,13 +12,16 @@ function loadData() {
     $nytElem.text("");
 
     // load streetview
-
-    // YOUR CODE GOES HERE!
     var streetStr = $('#street').val();
     var cityStr = $('#city').val();
     var address = streetStr + ',' + cityStr;
     var streetviewUrl = 'http://maps.googleapis.com/maps/api/streetview?size=600x300&location=' + address +'';
     $body.append('<img class="bgimg" src="' + streetviewUrl +'">');
+    // New York Times AJAX
+    $.getJSON(URL, function(data){
+        console.log(data);
+    });
+
 
     return false;
 };
